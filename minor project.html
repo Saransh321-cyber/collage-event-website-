@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Dashboard | Oriental University</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #f0f2f5;
+            --sidebar-color: #111f9d;
+            --accent-color: #4e73df;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --text-main: #333;
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-bg);
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* SIDEBAR NAVIGATION */
+        nav {
+            width: 260px;
+            background-color: var(--sidebar-color);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
+            transition: all 0.3s;
+        }
+
+        .brand-section {
+            padding: 0 25px 30px;
+            text-align: center;
+        }
+
+        .brand-section h1 {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: #fff;
+            border-bottom: 1px solid #343b4b;
+            padding-bottom: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li a {
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            color: #a0aec0;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        nav ul li i { margin-right: 15px; }
+
+        /* MAIN CONTENT AREA */
+        main {
+            flex-grow: 1;
+            padding: 30px;
+            overflow-y: auto;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        /* DASHBOARD GRID SYSTEM */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(4px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--glass-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .about-section {
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .about-section h2 {
+            margin-top: 0;
+            color: var(--sidebar-color);
+            font-size: 1.8rem;
+        }
+
+        /* GALLERY SLIDESHOW STYLE */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        @media (max-width: 900px) {
+            .grid-container { grid-template-columns: 1fr; }
+            nav { width: 80px; }
+            nav span { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="brand-section">
+        <h1>OU Indore</h1>
+    </div>
+    <ul>
+        <li><a href="#" class="active"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
+        <li><a href="events.html"><i class="fas fa-calendar-alt"></i> <span>Events</span></a></li>
+        <li><a href="schedule.html"><i class="fas fa-clock"></i> <span>Schedule</span></a></li>
+        <li><a href="register.html"><i class="fas fa-user-plus"></i> <span>Register</span></a></li>
+    </ul>
+</nav>
+
+<main>
+    <header class="dashboard-header">
+        <div>
+            <h2 style="margin:0;">Event Overview</h2>
+            <p style="color: #666; margin: 5px 0 0;">Welcome to the Oriental University Event Portal</p>
+        </div>
+        <div class="badge">SESSION 2025</div>
+    </header>
+
+    <div class="grid-container">
+        <section class="card about-section">
+            <h2><i class="fas fa-rocket" style="color: var(--accent-color);"></i> Ignite Your Passion</h2>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+            <p>
+                Get ready to unleash your potential at <strong>Oriental University, Indore</strong>! Nestled in the heart of India's educational hub, our sprawling campus is a melting pot of creativity, innovation, and academic excellence.
+            </p>
+            <p>
+                As a hub of learning and growth, we invite you to be a part of our vibrant community, where students, faculty, and industry experts come together to shape the future. Our events are designed to spark curiosity and foster collaboration.
+            </p>
+            <p>
+                From cultural extravaganzas to intellectual symposiums, our events are a celebration of diversity and intellectual pursuits. Join us for a transformative journey that will leave you inspired and empowered.
+            </p>
+            <button style="background: var(--accent-color); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; margin-top: 15px;">
+                Download Brochure
+            </button>
+        </section>
+
+        <section class="card">
+            <h3 style="margin-top:0;">Visual Highlights</h3>
+            <div class="gallery-grid">
+                <img src="image/imag1.webp" alt="Campus Life" class="gallery-item">
+                <img src="image/image2.jpg" alt="Workshops" class="gallery-item">
+                <img src="image/image3.jpg" alt="Cultural Fest" class="gallery-item">
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Oriental University Indore | Portal v2.0</p>
+    </footer>
+</main>
+
+</body>
+</html>
